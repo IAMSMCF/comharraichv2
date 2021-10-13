@@ -84,26 +84,105 @@ select {
 }
 
 :root {
+    --metric-gutter: 1.5rem;
+    --metric-mini-gutter: 0.8rem;
+    --metric-gutter-neg: -1.5rem;
+    --metric-mini-gutter-neg: -0.8rem;
     --color-dark: #1e4147;
     --color-light: #aac789;
         
     }
 
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --color-mode: 'dark';
-            --color-text: var(--color-light);
-            --color-bg: var(--color-dark);
-            --color-text-rev: var(--color-light);
-            --color-bg-rev: var(color-dark);
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-mode: 'dark';
+        --color-text: var(--color-light);
+        --color-bg: var(--color-dark);
+        --color-text-rev: var(--color-light);
+        --color-bg-rev: var(color-dark);
             
     }}
 
-    body {
-        color: var(--color-text);
-        background: var(--color-bg);
-        display: flex;
-        flex-direction: column;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+body {
+    color: var(--color-text);
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+button:active {
+    transform: scale(0.99);
     }
+      
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    line-height: 1;
+}
+      
+ul {
+    padding-left: 1rem;
+}
+      
+li + li {
+    margin-top: 0.5rem;
+}    
+      
+sup {
+    font-weight: 400;
+    line-height: 0.75;
+    font-size: 0.6em;
+}
+      
+label {
+    font-size: 1.3rem;
+    color: var(--color-mid);
+    font-family: var(--font-mono);
+    font-weight: 400;
+}
+      
+::placeholder {
+    opacity: 0.75;
+}
+
+    /**
+ * App shell
+ */
+.app {
+    flex: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+.title {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--metric-gutter);
+    /* outline: 0.25px solid; */
+    transition: opacity 500ms linear;
+    transition-delay: 100ms;
+}
+
+.title h1 {
+    max-width: 60ch;
+}
+
+.form_container {
+    float: left;
+  }
+  
+  .left {
+    width: 35%;
+  }
+  
+  .right {
+    width: 65%;
+    display: block;
+  }
