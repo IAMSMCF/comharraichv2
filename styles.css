@@ -82,3 +82,28 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+:root {
+    --color-dark: #1e4147;
+    --color-light: #aac789;
+        
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-mode: 'dark';
+            --color-text: var(--color-light);
+            --color-bg: var(--color-dark);
+            --color-text-rev: var(--color-light);
+            --color-bg-rev: var(color-dark);
+            
+    }}
+
+    body {
+        color: var(--color-text);
+        background: var(--color-bg);
+        display: flex;
+        flex-direction: column;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    }
